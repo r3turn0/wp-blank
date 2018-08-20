@@ -40,7 +40,8 @@ function SITENAME_load_scripts()
 	/* ------------ SCRIPTS -------------- */
 	// Queue site script after loading array dependencies in Wordpress CORE. List of Built in pacakages can be found here:
 	// https://developer.wordpress.org/reference/functions/wp_enqueue_script/
-	wp_enqueue_script('bootstrap', get_template_directory_uri() .'/js/bootstrap/bootstrap.min.js', array('jquery', 'jquery-ui-core'));
+	wp_enqueue_script( 'popper', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('jquery', 'jquery-ui-dialog'));
+	wp_enqueue_script('bootstrap', get_template_directory_uri() .'/js/bootstrap/bootstrap.min.js', array('popper'));
 	wp_enqueue_script('SITENAME', get_template_directory_uri() .'/js/SITENAME.js', array('bootstrap'));
 }
 
